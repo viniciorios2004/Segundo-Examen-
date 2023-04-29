@@ -1,0 +1,106 @@
+// Clase base FiguraGeometrica
+class FiguraGeometrica {
+public:
+    virtual double area() = 0;
+};
+
+// Clase derivada Cuadrado
+class Cuadrado : public FiguraGeometrica {
+private:
+    double lado;
+
+public:
+    Cuadrado(double lado);
+    double area();
+};
+
+// Clase derivada Rectangulo
+class Rectangulo : public FiguraGeometrica {
+private:
+    double base;
+    double altura;
+
+public:
+    Rectangulo(double base, double altura);
+    double area();
+};
+
+// Clase derivada Triangulo
+class Triangulo : public FiguraGeometrica {
+private:
+    double base;
+    double altura;
+
+public:
+    Triangulo(double base, double altura);
+    double area();
+};
+
+// Clase derivada Circulo
+class Circulo : public FiguraGeometrica {
+private:
+    double radio;
+
+public:
+    Circulo(double radio);
+    double area();
+};
+
+// Clase derivada Rombo
+class Rombo : public FiguraGeometrica {
+private:
+    double diagonalMayor;
+    double diagonalMenor;
+
+public:
+    Rombo(double diagonalMayor, double diagonalMenor);
+    double area();
+};
+
+// Implementación de la clase Cuadrado
+Cuadrado::Cuadrado(double lado) {
+    this->lado = lado;
+}
+
+double Cuadrado::area() {
+    return lado * lado;
+}
+
+// Implementación de la clase Rectangulo
+Rectangulo::Rectangulo(double base, double altura) {
+    this->base = base;
+    this->altura = altura;
+}
+
+double Rectangulo::area() {
+    return base * altura;
+}
+
+// Implementación de la clase Triangulo
+Triangulo::Triangulo(double base, double altura) {
+    this->base = base;
+    this->altura = altura;
+}
+
+double Triangulo::area() {
+    return (base * altura) / 2;
+}
+
+// Implementación de la clase Circulo
+Circulo::Circulo(double radio) {
+    this->radio = radio;
+}
+
+double Circulo::area() {
+    return 3.14159265358979323846 * radio * radio;
+}
+
+// Implementación de la clase Rombo
+Rombo::Rombo(double diagonalMayor, double diagonalMenor) {
+    this->diagonalMayor = diagonalMayor;
+    this->diagonalMenor = diagonalMenor;
+}
+
+double Rombo::area() {
+    return (diagonalMayor * diagonalMenor) / 2;
+}
