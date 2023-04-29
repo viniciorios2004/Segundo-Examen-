@@ -1,0 +1,68 @@
+#include <iostream>
+#include "Proyecto libreria .h"
+
+using namespace std;
+
+int main() {
+    int opcion;
+    double base, altura, radio, diagonalMayor, diagonalMenor;
+
+    do {
+        cout << "\nCalcular el area de la figura geometrica:\n";
+        cout << "1. Cuadrado\n";
+        cout << "2. Rectangulo\n";
+        cout << "3. Triangulo\n";
+        cout << "4. Circulo\n";
+        cout << "5. Rombo\n";
+        cout << "0. Salir\n";
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        switch(opcion) {
+            case 1:
+                cout << "Ingrese la longitud del lado del cuadrado: ";
+                cin >> base;
+                Cuadrado cuadrado(base);
+                cout << "El area del cuadrado es: " << cuadrado.calcularArea() << endl;
+                break;
+            case 2:
+                cout << "Ingrese la base del rectangulo: ";
+                cin >> base;
+                cout << "Ingrese la altura del rectangulo: ";
+                cin >> altura;
+                Rectangulo rectangulo(base, altura);
+                cout << "El area del rectangulo es: " << rectangulo.calcularArea() << endl;
+                break;
+            case 3:
+                cout << "Ingrese la base del triangulo: ";
+                cin >> base;
+                cout << "Ingrese la altura del triangulo: ";
+                cin >> altura;
+                Triangulo triangulo(base, altura);
+                cout << "El area del triangulo es: " << triangulo.calcularArea() << endl;
+                break;
+            case 4:
+                cout << "Ingrese el radio del circulo: ";
+                cin >> radio;
+                Circulo circulo(radio);
+                cout << "El area del circulo es: " << circulo.calcularArea() << endl;
+                break;
+            case 5:
+                cout << "Ingrese la diagonal mayor del rombo: ";
+                cin >> diagonalMayor;
+                cout << "Ingrese la diagonal menor del rombo: ";
+                cin >> diagonalMenor;
+                Rombo rombo(diagonalMayor, diagonalMenor);
+                cout << "El area del rombo es: " << rombo.calcularArea() << endl;
+                break;
+            case 0:
+                cout << "Saliendo del programa..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida. Intente de nuevo." << endl;
+        }
+
+    } while (opcion != 0);
+
+    return 0;
+}
